@@ -18,7 +18,32 @@ router.get("/", async (req, res) => {
       logged_in: req.session.logged_in,
     });
   } catch (err) {
-        // If there is an error, return 500 status code and error message
     res.status(500).json(err);
   }
 });
+
+// Route to render individual post page
+router.get("/post/:id", withAuth, async (req, res) => {
+    try {
+          // Find post by ID with associated username and comments with associated usernames
+      const postData = await Post.findByPk(req.params.id, {
+        include: [
+          { model: User, attributes: ["username"] },
+          {
+            model: Comment,
+            include: [{ model: User, attributes: ["username"] }],
+          },
+        ],
+      });
+      // Convert post data to plain JavaScript object and render post templates with post data and login status
+      const post = postData.get({ plain: true });
+      res.render("post", {
+        ...post,
+        logged_in: req.session.logged_in,
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
+  
