@@ -1,61 +1,15 @@
-console.log("Sequelize version:", require('sequelize').version);
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
-const bcryptjs = require('bcryptjs');
+const router = require("express").Router();
+const { User } = require("../../models");
 
-class User extends Model {
-  checkPassword(loginPw) {
-    return bcryptjs.compareSync(loginPw, this.password);
-  }
-}
- //below I am defining the structure and properties of the User object.
+// This route gets all users
+router.get("/", (req, res) => {
+  User.findAll({
+    attributes: { exclude: ["password"] },
+  })
+    .then((dbUserData) => res.json(dbUserData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
-User.init(
-    {
-      id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true,
-      },
-      username: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        unique: true,
-      },
-      email: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        unique: true,
-        validate: {
-          isEmail: true,
-        },
-      },
-      password: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          len: [8],
-        },
-      },
-    },
-// Below I addded the necesary sequelize hooks
-    {
-        hooks: {
-          async beforeCreate(newUser) {
-            newUser.password = await bcryptjs.hash(newUser.password, 10);
-            return newUser;
-          },
-          async beforeUpdate(updatedUser) {
-            updatedUser.password = await bcryptjs.hash(updatedUser.password, 10);
-            return updatedUser;
-          },
-        },
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'user',
-      }
-    );
-    
