@@ -1,7 +1,6 @@
-const {
-    User
-} = require("../models");
+const { User } = require("../models");
 
+//Below are blog post userData examples for demo
 const userData = [
 
     {
