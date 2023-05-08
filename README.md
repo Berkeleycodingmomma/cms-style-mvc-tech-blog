@@ -32,9 +32,9 @@ I have built a CMS-style blog site similar to a Wordpress site, where developers
 
 
 
-## Technology Used 
+## Technology/Research Data Used 
 
-| Technology/Research Data Used         | Resource URL           | 
+|         |         | 
 | ------------- |:-------------:| 
 Handlebars info: https://waelyasmina.medium.com/a-guide-into-using-handlebars-with-your-express-js-application-22b944443b65
 How to use middleware: https://expressjs.com/en/guide/using-middleware.html
