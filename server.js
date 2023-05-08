@@ -25,7 +25,7 @@ const sess = {
 };
 
 //Here we are using middleware w/ session obj.
-app.use(session(sees));
+app.use(session("sess"));
 
 //parsing json and URL encoded data
 app.use(express.json());
@@ -56,6 +56,6 @@ app.use(
 app.use(routes);
 
 //Syncing seq. models w/ database and starting server
-sequilize.sync({ force: false }).then(() => {
-    app.listen(PPORT, () => console.log(`Listening on PORT ${PORT}`));
+sequelize.sync({ force: false }).then(() => {
+    app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));
 });
