@@ -1,3 +1,5 @@
+
+//Below creating a new post 
 const newEquinePostFormHandler = async (event) => {
     event.preventDefault();
 
