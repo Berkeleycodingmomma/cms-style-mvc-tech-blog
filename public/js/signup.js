@@ -7,7 +7,7 @@ const equineSignupFormHandler = async (event) => {
     const password = document.querySelector('#password').value.trim();
 
     if (username && email && password) {
-        const response = await fetch('/api/users/signup', {
+        const response = await fetch('/public/js/signup', {
             method: 'POST',
             body: JSON.stringify({
                 username,
