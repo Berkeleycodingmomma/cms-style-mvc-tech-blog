@@ -33,3 +33,8 @@ const equineSignupForm = document.querySelector('#signup-form');
 if (equineSignupForm) {
     equineSignupForm.addEventListener('submit', equineSignupFormHandler);
 }
+
+
+
+
+

@@ -41,18 +41,18 @@ app.set("view engine", "handlebars");
 
 
 
-//Middleware w/ different obj.
-// app.use(
-//     session({
-//         secret: process.env.SECRET,
-//         store: new SequelizeStore({
-//             db: sequelize
-//         }),
-//         resave: false,
-//         saveUninitialized: false,
+// Middleware w/ different obj.
+app.use(
+    session({
+        secret: process.env.SECRET,
+        store: new SequelizeStore({
+            db: sequelize
+        }),
+        resave: false,
+        saveUninitialized: false,
 
-//     })
-// );
+    })
+);
 
 app.use(routes);
 
