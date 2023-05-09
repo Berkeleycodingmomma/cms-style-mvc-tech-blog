@@ -8,6 +8,7 @@ const sequelize = require("./config/connection");
 const exphbs = require("express-handlebars");
 const hbs = exphbs.create({ helpers: require("./utils/helper")});
 
+const path = require('path');
 
 //Creating express app and setting port
 const app = express();
@@ -25,7 +26,7 @@ const sess = {
 };
 
 //Here we are using middleware w/ session obj.
-app.use(session("sess"));
+app.use(session(sess));
 
 //parsing json and URL encoded data
 app.use(express.json());
@@ -41,17 +42,17 @@ app.set("view engine", "handlebars");
 
 
 //Middleware w/ different obj.
-app.use(
-    session({
-        secret: process.env.SECRET,
-        store: new SequelizeStore({
-            db: sequelize
-        }),
-        resave: false,
-        saveUninitialized: false,
+// app.use(
+//     session({
+//         secret: process.env.SECRET,
+//         store: new SequelizeStore({
+//             db: sequelize
+//         }),
+//         resave: false,
+//         saveUninitialized: false,
 
-    })
-);
+//     })
+// );
 
 app.use(routes);
 
