@@ -29,9 +29,7 @@
 - Visual Studio Code: [Website](https://code.visualstudio.com/)
 - Heroku: [Website](https://id.heroku.com/login)
 
-
-
-
+#
 ## Technology/Research Data Used 
 
 |         |         | 
@@ -41,12 +39,6 @@ How to use middleware: https://expressjs.com/en/guide/using-middleware.html
 Explaining bcrypt: https://www.npmjs.com/package/bcrypt
 Query Selectors info: https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector
 Format a date in javaScript: https://isotropic.co/how-to-format-a-date-as-dd-mm-yyyy-in-javascript/
-
-#
-## Youtube link to a walk-through demonstrating how to crete CMS-style blog site
-#
-
-* [Youtube-demo-link]()
 
 #
 
