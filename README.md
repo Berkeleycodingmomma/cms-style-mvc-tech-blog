@@ -164,7 +164,7 @@ module.exports = withAuth;
 ### Amanda Gray
 
 * [Linkedin](https://www.linkedin.com/in/amanda-gray-831a65254/)
-* [Github]()
+* [Github](https://github.com/Berkeleycodingmomma)
 * [Heroku](https://mysterious-fortress-89318.herokuapp.com/)
 
 ## Credits
