@@ -29,12 +29,13 @@ const newEquinePostFormHandler = async (event) => {
     event.preventDefault();
   
     let title = '';
-    const titleInput = document.querySelector('#title-new-equine-post');
+    const titleInput = document.querySelector('#title-new-equine-post-form');
     if (titleInput) {
       title = titleInput.value.trim();
     }
+    const contentElement = document.querySelector('#content-new-equine-post-form');
+    const content = contentElement ? contentElement.value.trim() : '';
   
-    const content = document.querySelector('#content-new-equine-post').value.trim();
   
     if (title && content) {
       const response = await fetch('/api/posts', {

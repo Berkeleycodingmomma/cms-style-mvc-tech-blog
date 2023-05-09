@@ -6,7 +6,7 @@
 #
 
 #
-## Visual image of the terminal after generating a .svg logo through the command-line
+## Visual image of Deployed site
 #
 
 
