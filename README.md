@@ -6,13 +6,13 @@
 #
 
 #
-## Visual image of Deployed site
-#
-# This is the Home page
+## Visual images of Deployed site
+- This is the Home page
 <img width="723" alt="Screen Shot 2023-05-09 at 1 05 21 AM" src="https://user-images.githubusercontent.com/127444682/237026132-56e0b08c-dd48-4fd5-9dd6-9cb9d4572b48.png">
-# This is the sign-up page
 
-#
+- This is the sign-up page
+<img width="724" alt="Screen Shot 2023-05-09 at 1 06 02 AM" src="https://user-images.githubusercontent.com/127444682/237027205-a90ad11c-ef38-4224-bc72-cc2cef4e16f5.png">
+
 #
 ## Built With:
 - JSON:[ JSON](https://www.npmjs.com/package/json)
